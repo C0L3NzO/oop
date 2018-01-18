@@ -14,6 +14,16 @@ class template
     var $content = false;
     //reaalsed väärtused html vaate šablooni täitmiseks
     var $vars = array();
+
+    /**
+     * template constructor.
+     * @param string $file
+     */
+    public function __construct($file)
+    {
+        $this->file = $file; //määrame html vaate faili nime
+        $this->loadFile(); //laadime html vaate faili sisu
+    }
     //template klassi meetodid:
     //html vaate faili sisu lugemine
     function readFile($f){
@@ -24,7 +34,7 @@ class template
     }
     //html vaate faili kontrollimine ja kasutuselevõtt
     function loadFile(){
-        $f = $this->file; //abiasendus
+        $file = $this->file; //abiasendus
         //kontrollime html vaadete kausta olemasolu
         if(!is_dir(VIEWS_DIR)){
             echo "Kataloogi ".VIEWS_DIR." ei ole leitud<br>";
@@ -32,34 +42,35 @@ class template
         }
         //kui html vaate faili nimi antakse kujul:
         //views/test.html
-        $f = $this->file; //abiasendus
-        if(file_exists($f) and is_file($f) and is_readable($f)){
+        $file = $this->file; //abiasendus
+        if(file_exists($file) and is_file($file) and is_readable($file)){
             //loome sisu failist
-            $this->readFile($f);
+            $this->readFile($file);
         }
         //kui html vaate faili nimi antakse kujul:
         //test.html
-        $f = VIEWS_DIR.$this->file;
-        if(file_exists($f) and is_file($f) and is_readable($f)) {
+        $file = VIEWS_DIR.$this->file;
+        if(file_exists($file) and is_file($file) and is_readable($file)) {
             //loome sisu failist
-            $this->readFile($f);
+            $this->readFile($file);
         }
         //kui html vaate faili nimi antakse kujul:
         //test
-        $f = VIEWS_DIR.$this->file.".html";
-        if(file_exists($f) and is_file($f) and is_readable($f)) {
+        $file = VIEWS_DIR.$this->file.".html";
+        if(file_exists($file) and is_file($file) and is_readable($file)) {
             //loome sisu failist
-            $this->readFile($f);
+            $this->readFile($file);
         }
         //kui html vaate faili nimi antakse kujul:
         //katse.test -> views/katse/test.html
-        $f = $this->file.str_replace(".", "/", $this->file).".html";
-        if(file_exists($f) and is_file($f) and is_readable($f)) {
+        $file = $this->file.str_replace(".", "/", $this->file).".html";
+        if(file_exists($file) and is_file($file) and is_readable($file)) {
             //loome sisu failist
-            $this->readFile($f);
+            $this->readFile($file);
         }
         if($this->content === false){
             echo "ei suutnud lugeda faili ".$this->file."<br>";
         }
     }
+
 }
