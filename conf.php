@@ -10,5 +10,5 @@
 
 // loome vajalikud abikonstandid
 define("MODEL_DIR", "model/");
-define("VIEWs_DIR", "views/");
+define("VIEWS_DIR", "views/");
 define("CONTROL_DIR", "controllers/");
