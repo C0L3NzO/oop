@@ -14,4 +14,12 @@ class template
     var $content = false;
     //reaalsed väärtused html vaate šablooni täitmiseks
     var $vars = array();
+    //template klassi meetodid:
+    //html vaate faili sisu lugemine
+    function readFile($f){
+        $fp = fopen($f, "rb");
+        $this->content = fread($fp, filesize($f));
+        fclose($fp);
+        $this->content = file_get_contents($f);
+    }
 }
