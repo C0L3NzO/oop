@@ -1,6 +1,6 @@
 # programmeerimisvahendite kasutamine
 
-antud rakendus on koostatud "programmeerimisvahendite kasutamine" aine raames ja on mõeldud MVC rakenduse koostamise mudeli õppimiseka ninh PHP oskse kinnitamiseks ja laiendamiseks OOP osas
+antud rakendus on koostatud "programmeerimisvahendite kasutamine" aine raames ja on mõeldud MVC rakenduse koostamise mudeli õppimiseka ning PHP oskse kinnitamiseks ja laiendamiseks OOP osas
 ##Alustuseks
 All on lisatud käsklused ja kirjeldused, mida on vaja järgida rakenduse tööle panemisel
 ###Projekti kausta struktuurmn
