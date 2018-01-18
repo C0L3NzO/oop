@@ -6,7 +6,7 @@
  * Time: 09:35
  */
 
-// konfiguratsiooni fail
+// konfiguratsioonifail
 
 // loome vajalikud abikonstandid
 define("MODEL_DIR", "model/");
