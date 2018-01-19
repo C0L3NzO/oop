@@ -74,7 +74,7 @@ class template
     }
     //this->vars massiivi täiendamine väärtuste paaridega kujul "malli elemendi nimi"=>"reaalne elemendi nimi"
     function set($name, $value){
-        $this->vars[$name] = $value
+        $this->vars[$name] = $value;
     }
 
 }
