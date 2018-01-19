@@ -72,5 +72,9 @@ class template
             echo "ei suutnud lugeda faili ".$this->file."<br>";
         }
     }
+    //this->vars massiivi täiendamine väärtuste paaridega kujul "malli elemendi nimi"=>"reaalne elemendi nimi"
+    function set($name, $value){
+        $this->vars[$name] = $value
+    }
 
 }
