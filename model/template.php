@@ -63,7 +63,7 @@ class template
         }
         //kui html vaate faili nimi antakse kujul:
         //katse.test -> views/katse/test.html
-        $file = $this->file.str_replace(".", "/", $this->file).".html";
+        $file = VIEWS_DIR.str_replace(".", "/", $this->file).".html";
         if(file_exists($file) and is_file($file) and is_readable($file)) {
             //loome sisu failist
             $this->readFile($file);
@@ -76,6 +76,18 @@ class template
     function set($name, $value){
         $this->vars[$name] = $value;
     }
+
+    //$this->vars massiivi
+
+
+    function add($name, $value){
+        if(!isset($this->vars[$name])){
+            $this->set($name, $value);
+        } else {
+            $this->vars[$name] = $this->vars[$name].$value;
+        }
+    }
+
     //malli elementide asendamine reaalväärtustega vastavalt elementide nimele
     function parse(){
         $str = $this->content; //sisu, mis ei ole veel asendatud
