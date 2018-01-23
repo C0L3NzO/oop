@@ -14,13 +14,13 @@ $itemTempl = new template("menu.item"); //menüü elemendi mall
 $itemTempl->set("name", "esimene");
 //lisame elemendi menüüsse
 $menuItem = $itemTempl->parse(); //string, mis sisaldab ühte nimekirja elementi
-$menuTempl->set("menu_items", $menuItem); //nüüd olemas paar "menu_items"->"<li>...</li>
+$menuTempl->add("menu_items", $menuItem); //nüüd olemas paar "menu_items"->"<li>...</li>
 
 //loome ühe menüü elemendi nimega teine
 $itemTempl->set("name", "teine");
 //lisame elemendi menüüsse
 $menuItem = $itemTempl->parse(); //string, mis sisaldab ühte nimekirja elementi
-$menuTempl->set("menu_items", $menuItem); //nüüd olemas paar "menu_items"->"<li>...</li>
+$menuTempl->add("menu_items", $menuItem); //nüüd olemas paar "menu_items"->"<li>...</li>
 
 //ehitame valmis menüü
 $menu = $menuTempl->parse();
