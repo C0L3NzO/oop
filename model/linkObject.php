@@ -28,6 +28,20 @@ class linkObject extends http
         if($link != ""){
             $link = $link.$this->delim;
         }
-        $link = $link.fixUrl($name).$this->eq.$value;
+        $link = $link.fixUrl($name).$this->eq.fixUrl($value);
+    }
+    //moodustame valmislingi kasutades põhilinki ja $this->>addToLink funktsiooni abil paare
+    function getLink($add = array()){
+        $link = "";
+        foreach($add as $name=>$value){
+            $this->addToLink($link, $name, $value);
+        }
+        if($link != ""){
+
+            $link = $this->baseLink."?".$link;
+        } else {
+            $link = $this->baseLink;
+        }
+        return $link;
     }
 }
