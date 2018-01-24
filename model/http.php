@@ -34,8 +34,8 @@ class http
         $constNames = array("HTTP_HOST", "SCRIPT_NAME");
         foreach($constNames as $constName){
             define($constName, $this->server[$constName]);
-            if(!defined($constName) and isset($this->server[$constName]){
-                define($constName, $this->server[$constName])
+            if(!defined($constName) and isset($this->server[$constName])){
+                define($constName, $this->server[$constName]);
             }
         }
     }

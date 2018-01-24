@@ -25,7 +25,5 @@ print_r($mainTmpl);
 echo "</pre>";
 echo $mainTmpl->parse();
 //kontrollime $http objekti tööd
-echo "<pre>";
-print_r($http);
-echo "<pre>";
+echo HTTP_HOST.SCRIPT_NAME."<br>";
 
