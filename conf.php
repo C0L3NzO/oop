@@ -15,6 +15,7 @@ define("CONTROL_DIR", "controllers/");
 
 //nõuame vajalike failide olemasolu
 require_once MODEL_DIR."template.php"; //html vaate failide töötlus
+require_once MODEL_DIR."http.php"; //HTTP töötluse klass
 require_once MODEL_DIR."linkObject.php"; //lingi töötluse klass
 
 //loome vajalikud objektid, mis on pidevalt kasutuses
