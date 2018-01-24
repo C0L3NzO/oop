@@ -28,3 +28,4 @@ echo $mainTmpl->parse();
 echo HTTP_HOST.SCRIPT_NAME."<br>";
 echo $http->baseLink."<br>";
 
+
