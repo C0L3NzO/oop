@@ -25,8 +25,5 @@ print_r($mainTmpl);
 echo "</pre>";
 echo $mainTmpl->parse();
 //kontrollime $http objekti tööd
-echo HTTP_HOST.SCRIPT_NAME."<br>";
-echo $http->baseLink."<br>";
-$pairs = array("control"=>"login", "user"=>"test");
-$link = $http->getLink($pairs);
-echo $link;
+$control = $http->get("control");
+echo $control."<br>";

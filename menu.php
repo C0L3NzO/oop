@@ -12,10 +12,11 @@ $itemTempl = new template("menu.item"); //menüü elemendi mall
 
 //loome ühe menüü elemendi nimega esimene
 //määrame menüüs väljastatava elemendi nime
+$link = $http->getLink(array("control"=>"esimene"));
+
 $itemTempl->set("name", "esimene");
 //määrata menüüs väljastatava elemendiga seotud linkk
-$link = $http->getLink(array("control"=>"esimene"));
-$itemTempl->set("name", "esimene");
+$itemTempl->set("link", $link);
 
 //lisame elemendi menüüsse
 $menuItem = $itemTempl->parse(); //string, mis sisaldab ühte nimekirja elementi
@@ -24,7 +25,7 @@ $menuTempl->add("menu_items", $menuItem); //nüüd olemas paar "menu_items"->"<l
 //loome ühe menüü elemendi nimega teine
 $itemTempl->set("name", "teine");
 $link = $http->getLink(array("control"=>"teine"));
-$itemTempl->set("name", "teine");
+$itemTempl->set("link", $link);
 
 //lisame elemendi menüüsse
 $menuItem = $itemTempl->parse(); //string, mis sisaldab ühte nimekirja elementi
