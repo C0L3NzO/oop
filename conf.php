@@ -13,6 +13,9 @@ define("MODEL_DIR", "model/");
 define("VIEWS_DIR", "views/");
 define("CONTROL_DIR", "controllers/");
 
+//nõuame abifunktsioonide olemasolu
+require_once LIB_DIR."utils.php";
+
 //nõuame vajalike failide olemasolu
 require_once MODEL_DIR."template.php"; //html vaate failide töötlus
 require_once MODEL_DIR."http.php"; //HTTP töötluse klass
