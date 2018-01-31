@@ -18,11 +18,10 @@ $mainTmpl->set("title", "Pealkiri");
 $mainTmpl->set("lang_bar", "Keeleriba");
 //lisame menüü failist
 require_once "menu.php";
-$mainTmpl->set("content", "Lehe sisu");
 //väljastame objekti sisu testkujul
-echo "<pre>";
-print_r($mainTmpl);
-echo "</pre>";
+//echo "<pre>";
+//print_r($mainTmpl);
+//echo "</pre>";
 echo $mainTmpl->parse();
 //kontrollime $http objekti tööd
 $control = $http->get("control");
