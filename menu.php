@@ -12,12 +12,20 @@ $itemTempl = new template("menu.item"); //menüü elemendi mall
 
 //loome ühe menüü elemendi nimega esimene
 //määrame menüüs väljastatava elemendi nime
-$link = $http->getLink(array("control"=>"esimene"));
+$link = $http->getLink();
+$itemTempl->set("name", "avaleht");
+//määrata menüüs väljastatava elemendiga seotud linkk
+$itemTempl->set("link", $link);
+//lisame elemendi menüüsse
+$menuItem = $itemTempl->parse(); //string, mis sisaldab ühte nimekirja elementi
+$menuTempl->add("menu_items", $menuItem); //nüüd olemas paar "menu_items"->"<li>...</li>
 
+//loome ühe menüü elemendi nimega esimene
+//määrame menüüs väljastatava elemendi nime
+$link = $http->getLink(array("control"=>"esimene"));
 $itemTempl->set("name", "esimene");
 //määrata menüüs väljastatava elemendiga seotud linkk
 $itemTempl->set("link", $link);
-
 //lisame elemendi menüüsse
 $menuItem = $itemTempl->parse(); //string, mis sisaldab ühte nimekirja elementi
 $menuTempl->add("menu_items", $menuItem); //nüüd olemas paar "menu_items"->"<li>...</li>
@@ -26,7 +34,6 @@ $menuTempl->add("menu_items", $menuItem); //nüüd olemas paar "menu_items"->"<l
 $itemTempl->set("name", "teine");
 $link = $http->getLink(array("control"=>"teine"));
 $itemTempl->set("link", $link);
-
 //lisame elemendi menüüsse
 $menuItem = $itemTempl->parse(); //string, mis sisaldab ühte nimekirja elementi
 $menuTempl->add("menu_items", $menuItem); //nüüd olemas paar "menu_items"->"<li>...</li>

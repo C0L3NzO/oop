@@ -6,10 +6,12 @@
  * Time: 14:19
  */
 //nõuame konfiguratsioonifaili
-require_once  "conf.php";
-
+require_once "conf.php";
 //loome pramalli objekti
+
 $mainTmpl = new template("main");
+require_once "control.php";
+
 //reaalväärtuste määramine
 $mainTmpl->set("site_lang", "et");
 $mainTmpl->set("site_title", "PV");
@@ -19,9 +21,7 @@ $mainTmpl->set("lang_bar", "Keeleriba");
 //lisame menüü failist
 require_once "menu.php";
 //väljastame objekti sisu testkujul
-//echo "<pre>";
-//print_r($mainTmpl);
-//echo "</pre>";
+
 echo $mainTmpl->parse();
 //kontrollime $http objekti tööd
 $control = $http->get("control");
