@@ -48,4 +48,8 @@ class http
         }
     }
 
+    //funktsioon, mis võimaldab määrata $this->>vars[$name] elemendile kindlat väärtust $value
+    function set($name, $value){
+        $this->vars[$name] = $value;
+    }
 }
