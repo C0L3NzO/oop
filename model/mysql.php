@@ -39,4 +39,14 @@ class mysql
             exit;
         }
     }
+
+    //päringu saatmise funktsioon
+    function query($sql){
+        $result = mysqli_query($this->conn, $sql);
+        if(!$result){
+            echo "Probleem päringuga".$sql."<br>";
+            return false;
+        }
+        return $result;
+    }
 }

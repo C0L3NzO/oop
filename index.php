@@ -29,3 +29,8 @@ echo $control."<pre>";
 echo "<pre>";
 print_r($http->vars);
 echo "</pre>";
+//kontrollime
+$db->query("SELECT NOW()");
+echo "<pre>";
+print_r($db);
+echo "</pre>";
