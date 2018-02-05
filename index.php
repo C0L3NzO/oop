@@ -29,8 +29,8 @@ echo $control."<pre>";
 echo "<pre>";
 print_r($http->vars);
 echo "</pre>";
-//kontrollime
-$db->query("SELECT NOW()");
+//kontrollime $db objekti tööd
+$hetkeKell = $db->getData("SELECT NOW()");
 echo "<pre>";
-print_r($db);
+print_r($hetkeKell);
 echo "</pre>";
