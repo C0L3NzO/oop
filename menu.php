@@ -10,6 +10,13 @@
 $menuTempl = new template("menu.menu"); //menüü mall
 $itemTempl = new template("menu.item"); //menüü elemendi mall
 
+//koostame menüü ja sisu koostamise päringu
+$sql = "select content_id, content, title from content where parent_id = ".fixDB(0)." and show_in_menu = ".fixDB(1);
+$result = $db->getData($sql);
+echo "<pre>";
+print_r($result);
+echo "</pre>";
+
 //loome ühe menüü elemendi nimega esimene
 //määrame menüüs väljastatava elemendi nime
 $link = $http->getLink();
